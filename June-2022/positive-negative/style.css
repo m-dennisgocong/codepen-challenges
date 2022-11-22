@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap");
+*,
+*::after,
+*::before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+:root {
+	--background-primary: #000000;
+	--text-font: "Kdam Thmor Pro", sans-serif;
+	--text-color: #ffffff;
+	--text-size: 4rem;
+}
+body {
+	height: 100vh;
+	display: grid;
+	place-items: center;
+	background-color: var(--background-primary);
+}
+h1 {
+	text-align: center;
+	font-family: var(--text-font);
+	font-size: var(--text-size);
+	text-transform: uppercase;
+	color: var(--text-color);
+	text-shadow: 0.05em 0 rgba(255, 0, 0), -0.025em -0.05em rgb(0, 255, 64),
+		0.025em 0.05em rgb(17, 0, 255);
+	animation: glitch 2000ms infinite;
+}
+span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+.positive {
+	top: 25%;
+}
+.amptt {
+	top: 41%;
+	font-family: Times;
+}
+.negative {
+	top: 50%;
+}
+span:nth-child(2) {
+	animation: glitch 1300ms infinite;
+	clip-path: polygon(0 33%, 100% 56%, 100% 100%, 0% 100%);
+	transform: translate(-0.01em, -0.015em);
+	z-index: 1;
+}
+
+span:nth-child(4) {
+	animation: glitch 1500ms infinite;
+	z-index: 1;
+	clip-path: polygon(0 57%, 100% 43%, 100% 100%, 0% 100%);
+	transform: translate(-0.01em, -0.015em);
+}
+span:nth-child(6) {
+	animation: glitch 1500ms infinite;
+	z-index: 1;
+	clip-path: polygon(0 57%, 100% 43%, 100% 100%, 0% 100%);
+	transform: translate(-0.01em, -0.015em);
+}
+
+@keyframes glitch {
+	0% {
+		text-shadow: 0.05em 0 rgba(255, 0, 0), -0.025em -0.05em rgb(0, 255, 64),
+			0.025em 0.05em rgb(17, 0, 255);
+	}
+	5% {
+		text-shadow: -0.05em -0.025em rgba(255, 0, 0), 0.025em 0.05em rgb(0, 255, 64),
+			0.025em -0.05em rgb(17, 0, 255);
+	}
+	10% {
+		text-shadow: 0.05em 0 rgba(255, 0, 0), -0.025em -0.05em rgb(0, 255, 64),
+			0.025em 0.05em rgb(17, 0, 255);
+	}
+	50% {
+		text-shadow: 0.05em 0 rgba(255, 0, 0), -0.025em -0.05em rgb(0, 255, 64),
+			0.025em 0.05em rgb(17, 0, 255);
+	}
+	53% {
+		text-shadow: -0.05em -0.025em rgba(255, 0, 0), -0.025em 0.05em rgb(0, 255, 64),
+			-0.025em 0.05em rgb(17, 0, 255);
+	}
+	60% {
+		text-shadow: 0.05em 0 rgba(255, 0, 0), -0.025em -0.05em rgb(0, 255, 64),
+			0.025em 0.05em rgb(17, 0, 255);
+	}
+	95% {
+		text-shadow: 0.05em 0 rgba(255, 0, 0), -0.025em -0.05em rgb(0, 255, 64),
+			0.025em 0.05em rgb(17, 0, 255);
+	}
+	100% {
+		text-shadow: 0.05em 0 rgba(255, 0, 0), 0.025em 0.05em rgb(0, 255, 64),
+			0.025em 0.05em rgb(17, 0, 255);
+	}
+}
