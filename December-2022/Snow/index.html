@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snow - CodePenChallenge</title>
+</head>
+<body style="background-color: rgb(70, 130, 180);">
+    <canvas id="canvas"></canvas>
+    <script>
+        // Set up the canvas
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        
+        // Set the dimensions of the canvas
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        // Set up the snowflakes
+        var snowflakes = [];
+        for (var i = 0; i < 100; i++) {
+            snowflakes.push({
+                x: Math.random() * canvas.width, // Random x-coordinate
+                y: Math.random() * canvas.height, // Random y-coordinate
+                radius: Math.random() * 10 + 1, // Random radius
+                rotation: Math.random() * 360 // Random rotation angle
+            });
+        }
+    
+        // Animate the snowflakes
+        setInterval(function () {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+        
+            // Draw and animate each snowflake
+            for (var i = 0; i < snowflakes.length; i++) {
+                var snowflake = snowflakes[i];
+            
+                // Move the snowflake
+                snowflake.y += 1;
+                snowflake.rotation += 0.1;
+            
+                // If the snowflake reaches the bottom of the canvas,
+                // move it back to the top
+                if (snowflake.y > canvas.height) {
+                    snowflake.y = 0;
+                }
+            
+                // Draw the snowflake
+                ctx.save();
+                ctx.translate(snowflake.x, snowflake.y);
+                ctx.rotate((snowflake.rotation * Math.PI) / 180);
+                ctx.beginPath();
+                ctx.arc(0, 0, snowflake.radius, 0, 2 * Math.PI);
+                ctx.fillStyle = "white";
+                ctx.fill();
+                ctx.restore();
+            }
+        }, 30);
+    </script>
+</body>
+</html>
