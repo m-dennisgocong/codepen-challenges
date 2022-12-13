@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rain - CodePenChallenge</title>
+</head>
+<body style="padding: 0; margin: 0; box-sizing: border-box;">
+    <canvas id="canvas" style="background-color: #000;"></canvas>
+    <script>
+        // Setup the canvas
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+
+        // Set the dimensions of the canvas
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Set the initial positions of the rain drops
+        var drops = [];
+        for (var i = 0; i < 100; i++) {
+        	drops.push({
+        		x: Math.random() * canvas.width,
+        		y: Math.random() * canvas.height,
+        		speed: Math.random() * 25 + 20
+        	});
+        }
+
+        // Draw the rain drops on the canvas
+        function drawRain() {
+        	ctx.clearRect(0, 0, canvas.width, canvas.height);
+        	ctx.fillStyle = "rgba(255, 255, 255)";
+        	for (var i = 0; i < drops.length; i++) {
+        		ctx.beginPath();
+        		ctx.arc(drops[i].x, drops[i].y, 2, 0, 2 * Math.PI);
+        		ctx.fill();
+        	}
+        }
+
+        // Update the positions of the rain drops
+        function updateRain() {
+        	for (var i = 0; i < drops.length; i++) {
+        		drops[i].y += drops[i].speed;
+        		if (drops[i].y > canvas.height) {
+        			drops[i].y = 0;
+        		}
+        	}
+        }
+
+        // Use setInterval to update the rain animation
+        setInterval(function () {
+        	drawRain();
+        	updateRain();
+        }, 40);
+            
+    </script>
+</body>
+</html>
