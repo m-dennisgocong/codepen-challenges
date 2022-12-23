@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wind - CodePenChallenge</title>
+</head>
+<style>
+    #windy-canvas {
+	    background-color: #d3d3d3;
+	    width: 100vw;
+	    height: 100vh;
+    }
+</style>
+<body>
+
+    <canvas id="windy-canvas"></canvas>
+    
+    <script>
+
+        const canvas = document.getElementById("windy-canvas");
+        const ctx = canvas.getContext("2d");
+
+        function drawWindyWeather(windSpeed, windDirection) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            for (let i = 0; i < 50; i++) {
+                const x = Math.random() * canvas.width;
+                const y = Math.random() * canvas.height;
+                const length = Math.random() * windSpeed;
+                const angle = Math.random() * windDirection;
+                ctx.moveTo(x, y);
+                ctx.lineTo(x + length * Math.cos(angle), y + length * Math.sin(angle));
+            }
+            ctx.stroke();
+        }
+
+        setInterval(() => {
+            drawWindyWeather(20, Math.PI / 4);
+        }, 100);
+
+    </script>
+</body>
+</html>
