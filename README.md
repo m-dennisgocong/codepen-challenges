@@ -28,4 +28,15 @@ Codepen Challenges are fun opportunities for leveling up your skills by building
     3. The 2000s - Google 2000 Homepage <a href="https://codepen.io/dennisgocong/full/OJEEjZM"> View Here! </a>
 
     4. The 2010s - Google 2010 Homepage <a href="https://codepen.io/dennisgocong/full/zYaJqVX"> View Here! </a>
+
+- December 2020 ( Weather Effects ) - The challenges is all about Weather.
+
+    I used ChatGPT to complete each challenges. ChatGPT is a chatbot launched by OpenAI in November 30. 
+
+    1. Snow - Weather Effect<a href="https://codepen.io/dennisgocong/full/zYabvYw"> View Here! </a>
+    2. Rain - Weather Effect<a href="https://codepen.io/dennisgocong/pen/qBKzBMX"> View Here! </a>
+    3. Wind - Weather Effect<a href="https://codepen.io/dennisgocong/pen/XWBbVZL"> View Here! </a>
+    4. Sunshine - Weather Effect<a href="https://codepen.io/dennisgocong/pen/poZgjLE"> View Here! </a>
+
+
     
